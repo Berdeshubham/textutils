@@ -5,16 +5,19 @@ export default function TexForm(props){
     const handleUpClick = ()=>{
         let newText=text.toUpperCase();
         setText(newText)
+        props.showAlert("Converted to uppercase", "success")
     }
 
     const handleLoClick = ()=>{
         let newText=text.toLowerCase();
         setText(newText)
+        props.showAlert("Converted to Lowercase", "success")
     }
 
     const handleClearClick = ()=>{
         let newText="";
         setText(newText)
+        props.showAlert("Text clear", "success")
     }
 
     const handleOnChange = (event)=>{
@@ -25,11 +28,13 @@ export default function TexForm(props){
         let text = document.getElementById("myBox");
         text.select()
         navigator.clipboard.writeText(text.value);
+        props.showAlert("Text Copied", "success")
     }
 
     const handleExtraSpaces = ()=>{
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "))
+        props.showAlert("Extra Spaces Removed", "success")
     }
 
     const [text,setText]= useState("")  //text is a variable & setText is a method to change the valu of a variable
