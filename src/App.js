@@ -40,7 +40,7 @@ function App() {
     <Navbar title="TextUtils" abouttext="about me" mode={mode} toggleMode={toggleMode} modeName={modeName}/>
     <Alert alert={alert}/>
     <div className="container my-3">  {/*my-3 is for margin*/}
-    <TextForm heading="Enter the text to analyze below (testing deployment)" mode={mode} showAlert={showAlert}/>
+    <TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert}/>
     </div>
     </>
   );
